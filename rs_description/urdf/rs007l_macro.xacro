@@ -264,5 +264,13 @@
       <parent link="${prefix}base_link"/>
       <child link="${prefix}base"/>
     </joint>
+
+    <!-- ROS-Industrial 'flange' frame: attachment point for EEF models -->
+    <link name="${prefix}flange" />
+    <joint name="${prefix}link6-flange" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <parent link="${prefix}link6" />
+      <child link="${prefix}flange" />
+    </joint>
   </xacro:macro>
 </robot>

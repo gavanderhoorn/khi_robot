@@ -256,5 +256,13 @@
       </collision>
       <xacro:default_inertial mass="${j6_mass}"/>
     </link>
+
+    <!-- ROS-Industrial 'base' frame: base_link to Kawasaki Base Coordinates transform -->
+    <link name="${prefix}base" />
+    <joint name="${prefix}base_link-base" type="fixed">
+      <origin xyz="0 0 ${j0_length}" rpy="0 0 ${radians(-90)}"/>
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}base"/>
+    </joint>
   </xacro:macro>
 </robot>
